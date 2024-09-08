@@ -1,0 +1,11 @@
+Now I want to work on the backend.
+
+First I want to look at main.rs and services/ai_model.rs.
+I already have a running version of the basic model in ai_model.rs 
+that uses the command line to generate responses. I want to modify this 
+so that it can generate responses in a web app through our websocket.
+
+We'll probably need to build out the message model in models/message.rs 
+We'll eventually need to build out a ChatServer and ChatSession and connect
+all of this to our websocket handler. 
+

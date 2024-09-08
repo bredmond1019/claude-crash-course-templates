@@ -1,0 +1,7 @@
+The firt part I want to work on is the frontend.
+
+I want to get started with the chat interface and establish the WebSocket connection.
+We're going to look at websocket.ts and ChatInterface.tsx. 
+
+I want to make sure that the WebSocket connection is established 
+and that messages are sent and received.

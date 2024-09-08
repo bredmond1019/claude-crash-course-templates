@@ -1,0 +1,120 @@
+# Response from the AI
+
+Thank you for providing such a detailed description of your AI Chat Bot project for your Health Tech Startup. 
+It's an exciting idea that can significantly improve customer support. 
+Let's break down your requirements and discuss the key aspects of your application.
+
+1. Could you tell me more about the external API that provides access to your help docs? 
+What kind of response does it return, and what parameters does it accept?
+
+2. Regarding the AI model for parsing long questions and generating responses, 
+do you have a specific model in mind, or would you like recommendations?
+
+3. How do you envision the user interface for this chat bot? 
+Will it be embedded in your existing application, or will it be a standalone web page?
+
+4. Are there any specific security concerns or compliance requirements 
+(like HIPAA) that we need to consider, given that this is for a Health Tech Startup?
+
+5. Do you have any preference for how the application should 
+handle user authentication, if required?
+
+6. Regarding the streaming of responses, do you have any specific 
+requirements for how this should be presented to the user 
+(e.g., word by word, sentence by sentence)?
+
+7. Have you considered how you want to handle rate limiting 
+or abuse prevention for this chat bot?
+
+8. Do you have any specific performance targets in mind 
+for response times or concurrent users?
+
+9. Are there any particular third-party services or libraries 
+you'd like to incorporate or avoid?
+
+10. How do you plan to monitor and improve the chat bot's performance 
+over time? Would you like to include any analytics or feedback mechanisms?
+
+These questions will help me understand your project better and 
+provide more tailored advice. Once we have a clearer picture, 
+I'll be able to create a comprehensive masterplan.md file for your application.
+
+
+# Responses to the AI
+
+Thank you for your questions. Here are my responses, 
+Let me know if you need any more information.
+
+1. The external API provides access to our help docs and returns a JSON response. 
+It accepts a query parameter that contains the user's question.
+
+Sample Response:
+
+Status: 200 OK
+```json
+{
+    "page": 1,
+    "pages": 24,
+    "count": 1154,
+    "items": [
+        {
+            "id": 1234,
+            ...
+            "createdAt": "2012-07-17T13:41:01Z"
+        },
+        {
+            "id": 5678,
+            ...
+            "createdAt": "2012-07-15T08:12:15Z"
+        },
+        ...
+    ]
+}
+```
+
+Status: 404 Not Found
+```json
+{
+    "code": 404,
+    "error": "Resource not found"
+}
+```
+
+The API key is passed via HTTP Basic Authentication and goes in the username field. A dummy password, such as X, goes in the password field.
+
+To try the API via curl on the command-line, the general form used would be:
+
+curl --user API_KEY:DUMMY_PASSWORD API_URL
+
+For instance, if your API key is 60783dd23ef, you would execute:
+
+curl --user 60783dd23ef:X https://docsapi.helpscout.net/v1/collections
+
+But we won't be using curl obviously, we would be using the `reqwest` library.
+
+
+
+2. I'll be using the llama 3.1 7B model for this application.
+
+3. The user interface will be a standalone web page that can be embedded
+in our existing application at a future date.
+
+4. Not now as this is just an MVP for demo.
+
+5. Not now as this is just an MVP for demo.
+
+6. The application should stream the responses word by word. 
+Or however the chunks or tokens are sent back from the model.
+
+7. The responses should generally be 3 - 5 sentences. If an article
+was found with relevant information, the response should include a link
+to the article.
+
+8. I would say at least 30 users to start at moderate use. With the potential
+to scale as we get more traffic.
+
+9. I would like to use the `reqwest` library for making HTTP requests.
+
+10. We will monitor the chat bot's performance using Google Analytics.
+We will also include a feedback mechanism where users can rate the chat bot's responses.
+But all of this can be done later, as this is just an MVP for demo.

@@ -1,0 +1,37 @@
+I'm creating a Rust project and I need your help. 
+I'm going to give you a description of the project and 
+some drawings, and I'd like you to help me turn it into a real 
+life rust project. 
+
+Project Details:
+
+AI Chat Bot Application for Customer Support
+
+I want to create a chat bot for my Health Tech Startup company. 
+I want this chat bot to be able to read through data and/or websites 
+and answer any questions that a customer may have about our application. 
+This application will utilize Rust on the backend and React on the 
+frontend with Actix Web Framework and the use of Websockets for real 
+time connections. The response to the user should be streams and updated 
+in real time. The answers will generally be no longer than 3 - 5 sentences 
+and either suggested links to read more info, or links directly where 
+the answer was found. 
+
+We have our help docs for customers stored on an external website that 
+we can access through an API by passing back a query string. 
+
+This project is mostly to get an MVP to demo and to learn how to 
+build an application like this.
+
+It should be able to handle concurrent requests well. 
+
+If the question the User asks is very long, the application should 
+send the question to the model and parse out just a few key words 
+that we can pul out and send in our query string to the API. 
+
+
+If the question is unrelated to Healthie or Clinical Care related items, 
+or no documents were found in the API Search,
+
+The model application should return a response to ask the user 
+again for a more concise search.
